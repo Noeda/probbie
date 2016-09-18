@@ -1,0 +1,6 @@
+.stack-work/
+.cabal-sandbox/
+*.swp
+*.hi
+*.o
+

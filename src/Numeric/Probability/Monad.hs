@@ -193,7 +193,7 @@ cauchy point middle gamma = Free $ CauchyF point middle gamma (return Happened)
 {-# INLINE cauchy #-}
 
 cauchyIntervalB :: f -> f -> f -> f -> ProbabilityT f Happens -> ProbabilityT f Happens -> ProbabilityT f Happens
-cauchyIntervalB a b middle gamma p1 p2 = Free $ GaussianIntervalF a b middle gamma p1 p2
+cauchyIntervalB a b middle gamma p1 p2 = Free $ CauchyIntervalF a b middle gamma p1 p2
 {-# INLINE cauchyIntervalB #-}
 
 cauchyInterval :: f -> f -> f -> f -> ProbabilityT f Happens
@@ -202,7 +202,7 @@ cauchyInterval a b middle gamma = cauchyIntervalB a b middle gamma (return Happe
 
 cauchySmallerThanOther :: Num f => f -> f -> f -> f -> ProbabilityT f Happens
 cauchySmallerThanOther middle1 gamma1 middle2 gamma2 =
-  cauchyInterval (negate (gamma1+gamma2) * 1000000) 0 (middle1-middle2) (gamma1+gamma2)
+  cauchyInterval (negate (gamma1+gamma2) * 100000000) 0 (middle1-middle2) (gamma1+gamma2)
 {-# INLINE cauchySmallerThanOther #-}
 
 runProbabilityT :: Num f => ProbabilityT f Happens -> Prob f

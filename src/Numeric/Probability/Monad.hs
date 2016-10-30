@@ -63,7 +63,7 @@ normalCdf point mean sigma2 =
 
 cauchyCdf :: Floating a => a -> a -> a -> a
 cauchyCdf point middle gamma =
-  (1/pi) * atan ( (middle-point)/gamma ) + 0.5
+  (1/pi) * atan ( (point-middle)/gamma ) + 0.5
 {-# INLINE cauchyCdf #-}
 
 pointDensityFunctionLB :: (Ord a, RealFloat a) => Prob a -> LB a

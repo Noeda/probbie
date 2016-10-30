@@ -39,7 +39,7 @@ packages:
 - '.'
 - location:
     git: git://github.com/Noeda/lognum
-    commit: 18ff1d41ca92dae8b95e19beefccb98370779263
+    commit: 06424c19c847dab765c9f64cd9fe52823005cbd9
   extra-dep: True
 
 # Dependency packages to be pulled from upstream that are not in the resolver
